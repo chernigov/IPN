@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Укр-ІПН - Декодер</string>
+    <string name="ipn_button_name">Розшифрувати</string>
+    <string name="ipn_description">Покаже: \nДату народження\nСтать\nАвтентичність</string>
+    <string name="ipn_fake">ІПН - підроблений</string>
+    <string name="ipn_hint_text">10 Цифр ...</string>
+    <string name="ipn_not_fake">ІПН - справжній</string>
+    <string name="ipn_numbers_less">Повинно бути 10.Додейте ще \s</string>
+    <string name="ipn_numbers_no">Порожне поле.Заповніть його!</string>
+    <string name="ipn_sex_man">Чоловік</string>
+    <string name="ipn_sex_woman">Жінка</string>
+    <string name="ipn_text_title">Індивідуальний Податковий Номер</string>
+</resources>

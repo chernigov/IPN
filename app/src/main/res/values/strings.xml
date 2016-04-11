@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">UA-TIN - Decoder</string>
+    <string name="ipn_text_title">Taxpayer Identification Number</string>
+    <string name="ipn_description">Will Show: \nBirthday Date\nSex\n Authenticity</string>
+    <string name="ipn_button_name">Decode</string>
+    <string name="ipn_hint_text">10 Digits ...</string>
+    <string name="ipn_sex_man">Man</string>
+    <string name="ipn_sex_woman">Woman</string>
+    <string name="ipn_not_fake">TIN is Real</string>
+    <string name="ipn_fake">TIN is Fake</string>
+    <string name="ipn_numbers_less">Should be 10 digits.\n Add next \s</string>
+    <string name="ipn_numbers_no">There are no digits in the field.\n Fill it!</string>
+</resources>

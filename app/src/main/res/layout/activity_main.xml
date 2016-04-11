@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.ipn.MainActivity">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/podatkova_logo" />
+
+        <TextView
+            android:id="@+id/ipn_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:paddingTop="8dp"
+            android:text="@string/ipn_description"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/ipn_text_title"
+            android:textColor="#1A237E"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/ipn_input"
+            style="@style/AppTheme.IputFiled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/ipn_hint_text"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="number"
+            android:maxLength="10"
+            android:gravity="center"
+            android:numeric="integer"
+            android:padding="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:onClick="decodeNumber"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:text="@string/ipn_button_name"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
