@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             displayInformation(birthdayDate, sex, fakeStatus);
 
 
-            secretLogo.setImageResource(R.drawable.wiki_logo);
+            secretLogo.setImageResource(R.drawable.gift);
 
 
         } else {
@@ -226,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        SimpleDateFormat  wikiFormat = new SimpleDateFormat("MMMM_d");
+        SimpleDateFormat  wikiFormat = new SimpleDateFormat("MMMM_d", Locale.US);
 
         String birhDayWiki=wikiFormat.format(birhDayDate);
 
