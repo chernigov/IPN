@@ -17,11 +17,13 @@
         android:padding="15dp">
 
         <ImageView
+            android:id="@+id/secret_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/podatkova_logo" />
+            android:src="@drawable/podatkova_logo"
+            android:onClick="openLink"/>
 
         <TextView
             android:id="@+id/ipn_result"

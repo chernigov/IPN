@@ -1,12 +1,15 @@
 package com.example.android.ipn;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     String ipnRealColorText = "#4CAF50";
     String ipnRealColorBackground = "#C8E6C9";
 
+    //Birthday Date
+    private Date  birhDayDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public void decodeNumber(View view) {
 
         EditText inputNumber = (EditText) findViewById(R.id.ipn_input);
+        ImageView secretLogo = (ImageView) findViewById(R.id.secret_logo);
 
         String ipn = inputNumber.getText().toString();
 
@@ -63,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
             String fakeStatus = checkFake(ipnNumbers);
 
             displayInformation(birthdayDate, sex, fakeStatus);
+
+
+            secretLogo.setImageResource(R.drawable.wiki_logo);
 
 
         } else {
@@ -166,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Calendar c = Calendar.getInstance();
 
+
         try {
             Date startDate = (Date) formatter.parse("31-12-1899");
             c.setTime(startDate);
@@ -178,8 +189,8 @@ public class MainActivity extends AppCompatActivity {
         }
         c.add(Calendar.DATE, birthDayCode);
 
-
-        return formatter.format(c.getTime());
+        birhDayDate = c.getTime();
+        return  formatter.format(birhDayDate);
 
     }
 
@@ -199,5 +210,39 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     * Create Intent open Browser and will be looking in Wikipedia who have born in same day before
+     *
+     *
+     * @param view View
+     */
+
+    public void openLink(View view){
+
+
+        if(birhDayDate == null){
+
+            return;
+        }
+
+        SimpleDateFormat  wikiFormat = new SimpleDateFormat("MMMM_d");
+
+        String birhDayWiki=wikiFormat.format(birhDayDate);
+
+        Intent sendToBrowser = new Intent();
+        String url="https://en.m.wikipedia.org/wiki/"+birhDayWiki+"#Births";
+
+        Uri webPage = Uri.parse(url);
+        sendToBrowser.setAction(Intent.ACTION_VIEW);
+        sendToBrowser.setData(webPage);
+
+
+        if (sendToBrowser.resolveActivity(getPackageManager()) != null) {
+            startActivity(sendToBrowser);
+        }
+    }
+
+
 
 }
